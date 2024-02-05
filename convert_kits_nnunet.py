@@ -20,7 +20,7 @@ def split_3d_nifti(filename, output_folder):
     # num_training_cases =0
     if dim == 3:
         # print("yey: this is 3D")
-        # shutil.copy(filename, join(output_folder, file_base[:-7] + "_0000.nii.gz"))
+        shutil.copy(filename, join(output_folder, file_base[:-7] + "_0000.nii.gz"))
         # JL Change
         shutil.copy(filename, join(output_folder, file_base[:-7] + ".nii.gz"))
         return
