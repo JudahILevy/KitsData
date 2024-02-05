@@ -2,14 +2,18 @@ import os
 import shutil
 
 
-dataset_folder = input("Enter the absolute path to the dataset folder: ")
+# dataset_folder = input("Enter the absolute path to the dataset folder: ")
 
 # Replace 'path_to_your_dataset_folder' with the actual path to your dataset folder
-# dataset_folder = '/Users/judahlevy/Downloads/kits23/dataset'
+dataset_folder = '/Users/judahlevy/Downloads/kits23/dataset'
+destination_directory = '/Users/judahlevy/data/X/nnUnet_Data/nnUNet_raw/Task07_Kidney/'
+
+# Create destination_directory if it does not exist
+os.makedirs(destination_directory, exist_ok=True)
 
 # Create new folders if they don't exist
-images_tr_folder = os.path.join(dataset_folder, 'imagesTr')
-labels_tr_folder = os.path.join(dataset_folder, 'labelsTr')
+images_tr_folder = os.path.join(destination_directory, 'imagesTr')
+labels_tr_folder = os.path.join(destination_directory, 'labelsTr')
 
 os.makedirs(images_tr_folder, exist_ok=True)
 os.makedirs(labels_tr_folder, exist_ok=True)
