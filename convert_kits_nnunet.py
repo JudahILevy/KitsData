@@ -22,7 +22,7 @@ def split_3d_nifti(filename, output_folder):
         # print("yey: this is 3D")
         shutil.copy(filename, join(output_folder, file_base[:-7] + "_0000.nii.gz"))
         # JL Change
-        shutil.copy(filename, join(output_folder, file_base[:-7] + ".nii.gz"))
+        # shutil.copy(filename, join(output_folder, file_base[:-7] + ".nii.gz"))
         return
     else:
         raise RuntimeError("Unexpected dimensionality: %d of file %s, cannot split" % (dim, filename))
