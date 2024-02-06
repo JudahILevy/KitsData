@@ -44,7 +44,7 @@ def main(dataset_folder,nnRaw_folder):
             segmentation_dest_path = os.path.join(labels_tr_folder, segmentation_filename)
     
             # Rename and move the files
-            shutil.copy(imaging_source_path, imaging_dest_path)
-            shutil.copy(segmentation_source_path, segmentation_dest_path)
+            shutil.move(imaging_source_path, imaging_dest_path)
+            shutil.move(segmentation_source_path, segmentation_dest_path)
     
     print("Conversion completed successfully.")
