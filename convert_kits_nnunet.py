@@ -20,9 +20,9 @@ def split_3d_nifti(filename, output_folder):
     # num_training_cases =0
     if dim == 3:
         # print("yey: this is 3D")
-        shutil.copy(filename, join(output_folder, file_base[:-7] + "_0000.nii.gz"))
+        shutil.move(filename, join(output_folder, file_base[:-7] + "_0000.nii.gz"))
         # JL Change
-        # shutil.copy(filename, join(output_folder, file_base[:-7] + ".nii.gz"))
+        # shutil.move(filename, join(output_folder, file_base[:-7] + ".nii.gz"))
         return
     else:
         raise RuntimeError("Unexpected dimensionality: %d of file %s, cannot split" % (dim, filename))
@@ -95,13 +95,13 @@ def convert_msd_dataset(source_folder: str, overwrite_target_id: Optional[int] =
             )
         )
 
-        # copy segmentations
+        # move segmentations
         source_images = [i for i in subfiles(labelsTr, suffix='.nii.gz', join=False) if
                          not i.startswith('.') and not i.startswith('_')]
         # JL added line to limit the labels to the same number as the images
         source_images = source_images[:train_num]
         for s in source_images:
-            shutil.copy(join(labelsTr, s), join(target_labelsTr, s))
+            shutil.move(join(labelsTr, s), join(target_labelsTr, s))
 
         [i.get() for i in results]
 
