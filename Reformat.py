@@ -14,10 +14,12 @@ def main(dataset_folder,nnRaw_folder):
     # Create new folders if they don't exist
     images_tr_folder = os.path.join(destination_directory, 'imagesTr')
     labels_tr_folder = os.path.join(destination_directory, 'labelsTr')
-    
+    labels_ts_folder = os.path.join(destination_directory, 'labelsTs')
+
     os.makedirs(images_tr_folder, exist_ok=True)
     os.makedirs(labels_tr_folder, exist_ok=True)
-    
+    os.makedirs(labels_ts_folder, exist_ok=True)
+        
     # Iterate through each case folder in the dataset
     for case_folder in os.listdir(dataset_folder):
         if not case_folder.startswith('case_'):
