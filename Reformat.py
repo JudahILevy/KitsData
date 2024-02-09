@@ -3,8 +3,7 @@ import shutil
 
 from Resize import resize_image
 
-output_size = (128, 128, 128)
-# note: in our data, z always seems to be at a max of 128 already
+output_size = (128, 128, 0)
 
 def main(dataset_folder,nnRaw_folder):
     # dataset_folder = input("Enter the absolute path to the dataset folder: ")
