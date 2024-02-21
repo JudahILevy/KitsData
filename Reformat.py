@@ -3,7 +3,7 @@ import shutil
 
 from Resize import resize_image
 
-output_size = (128, 128, 0)
+output_size = (128, 128)
 
 def main(dataset_folder,nnRaw_folder):
     # dataset_folder = input("Enter the absolute path to the dataset folder: ")
@@ -56,7 +56,7 @@ def main(dataset_folder,nnRaw_folder):
             shutil.move(segmentation_source_path, segmentation_dest_path)
 
             # Resize the images after moving them
-            resize_image(imaging_dest_path, imaging_dest_path, output_size)
-            resize_image(segmentation_dest_path, segmentation_dest_path, output_size)
+            # resize_image(imaging_dest_path, imaging_dest_path, output_size)
+            # resize_image(segmentation_dest_path, segmentation_dest_path, output_size)
     
     print("Conversion completed successfully.")
